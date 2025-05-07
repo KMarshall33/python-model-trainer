@@ -16,6 +16,7 @@ def global_init():
 # Uses pandas library to load a .csv or Excel spreadsheet into a dataset
 
 def load_dataset():
+    global df
     file_path = filedialog.askopenfilename(filetypes=[("CSV files", "*.csv"), ("Excel files", "*.xlsx;*.xls")])
     if file_path:
         try:
@@ -56,6 +57,8 @@ def make_predictions(model, df, features):
         result_text.insert(tk.END, f"Predictions:\n{predictions}")
     except Exception as e:
         messagebox.showerror("Error", f"Failed to make predictions: {e}")
+
+global_init()
 
 # Initialises the main tkinter window and sets the title
 
