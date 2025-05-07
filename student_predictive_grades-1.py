@@ -6,9 +6,12 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
 
-#add funtion
+# Function initialises global variables
 
-
+def global_init():
+    global df, model
+    df = None
+    model = None
 
 # Uses pandas library to load a .csv or Excel spreadsheet into a dataset
 
